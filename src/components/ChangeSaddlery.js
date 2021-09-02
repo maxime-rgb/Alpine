@@ -15,7 +15,7 @@ const ChangeSaddleryConnect = ({OptionSelected}) => {
 
     let data
 
-    if (OptionSelected.name == 'A110 Pure') {
+    if (OptionSelected.name === 'A110 Pure') {
         data =  pure
     } else {
         data =  legend

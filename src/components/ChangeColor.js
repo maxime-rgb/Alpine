@@ -1,6 +1,4 @@
 import React from 'react';
-import ModelCard from './ModelCard';
-import NavBarHome from './NavbarHome';
 import pure from './OptionsPure'
 import legend from './OptionsLegend'
 import {connect} from 'react-redux'
@@ -15,7 +13,7 @@ const mapStateToProps = (state, ) => {
 
 const ChangeColorConnect = ({OptionSelected}) => {
     let data
-        if (OptionSelected.name == 'A110 Pure') {
+        if (OptionSelected.name === 'A110 Pure') {
             data =  pure
         } else {
             data =  legend

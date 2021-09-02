@@ -8,13 +8,86 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+header {
+  position: relative;
+  height: 70vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-h1{
-  color: white;
+
+.version{
+  color: rgb(253, 253, 253);
   text-align: center;
   margin-top: 1vw;
 
+}
+
+h1{
+  color: black;
+  text-align: center;
+  margin-top: 1vw;
+
+}
+.optionBuy{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+
+}
+
+.optionName{
+  font-size: 1.4rem;
+  text-decoration: underline;
+
+}
+.optionPrice{
+  font-size: 1.7rem;
+}
+
+span.line {
+  display: inline-block;
+  font-size: 80%;
+  line-height: normal;
+  width: 100%;
+  line-height: 2rem;
+  border: 1px solid #019ed5;
+  border-radius: 25px;
+}
+.totalAmount{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.accor {
+  background-color: #051C2C;
+  margin: auto;
+}
+
+.btnRecap {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 25rem;
 }

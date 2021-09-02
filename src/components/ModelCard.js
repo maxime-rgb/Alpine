@@ -21,9 +21,9 @@ const ModelCardConnect = ({selectCarVersion}) => {
                 <Card.Body>
                     <Card.Title>{OptionsPure.default.name}</Card.Title>
                     <Card.Text>{OptionsPure.default.description} </Card.Text>
-                    <Card.Text>From {OptionsPure.default.price} </Card.Text>
+                    <Card.Text>From {OptionsPure.default.price} $ </Card.Text>
                     <Link to="/colors">
-                        <Button variant="primary" onClick={()=>handleClick(OptionsPure)}>Go somewhere</Button>
+                        <Button variant="outline-primary" onClick={()=>handleClick(OptionsPure)}>Go somewhere</Button>
                     </Link>
 
                 </Card.Body>
@@ -34,9 +34,9 @@ const ModelCardConnect = ({selectCarVersion}) => {
                 <Card.Body>
                     <Card.Title>{OptionsLegend.default.name}</Card.Title>
                     <Card.Text>{OptionsLegend.default.description} </Card.Text>
-                    <Card.Text>From {(OptionsLegend.default.price.toLocaleString('fr-FR')) } </Card.Text>
+                    <Card.Text>From {OptionsLegend.default.price} $</Card.Text>
                     <Link to="/colors">
-                        <Button variant="primary" onClick={()=>handleClick(OptionsLegend)}>Go somewhere</Button>
+                        <Button variant="outline-primary" onClick={()=>handleClick(OptionsLegend)}>Go somewhere</Button>
                     </Link>
                 </Card.Body>
             </Card>

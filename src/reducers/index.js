@@ -1,3 +1,5 @@
+import { List } from "semantic-ui-react";
+
 const initialState = {
 
   OptionSelected:{
@@ -48,11 +50,52 @@ function rootReducer(state = initialState, action) {
             }
         }
 
-
         console.log(newState);
 
         return newState
 
+        case "SELECT_EQUIPMENT":
+            newState = {
+                ...state,
+                OptionSelected: {
+                    ...state.OptionSelected,
+                    equipments:{
+                        ...state.OptionSelected.equipments,
+                       
+                        [action.payload.group]: {
+                            ...state.OptionSelected.equipments[action.payload.group],
+                             perso: {
+                                ...state.OptionSelected.equipments[action.payload.group].perso,
+                                [action.payload.element.id]: action.payload.element
+                            }
+                        }
+                  
+                    }
+                }
+            }
+            
+    
+            console.log(newState);
+    
+            return newState
+
+            case "SELECT_ACCESSORIES":
+                newState = {
+                    ...state,
+                    OptionSelected: {
+                        ...state.OptionSelected,
+                        accessories:{
+                            ...state.OptionSelected.accessories,
+                            [action.payload.group]:{
+                                ...state.OptionSelected.accessories[action.payload.group],
+                                    [action.payload.element.id]: action.payload.element
+                            }          
+                        }
+                    }
+                }
+                
+                console.log(newState);
+                return newState
         default:
         return state
     }

@@ -1,14 +1,18 @@
 import React from 'react';
 import ModelCard from './ModelCard';
-import NavBarHome from './NavbarHome';
+import NavbarHome from './NavbarHome';
+import HeaderVid from './Headervid';
+
 
 const Home = () => (
-    <div className="App">
-      <NavBarHome />
-      <h1>Select a version :</h1>
-      <ModelCard />
+
+    <div>
+        <NavbarHome />
+        <HeaderVid />
+        <ModelCard />
     </div>
-  )
-  
-  
-  export default Home;
+    
+)
+
+
+export default Home;

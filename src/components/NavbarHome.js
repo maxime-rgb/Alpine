@@ -22,9 +22,9 @@ const NavBarHome = () => {
                         <Nav className="me-auto">
 
                         <NavDropdown title="Equipments" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">accessories</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Rims</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Saddlery</NavDropdown.Item>
+                            <NavDropdown.Item href="/accessories">accessories</NavDropdown.Item>
+                            <NavDropdown.Item href="/rims">Rims</NavDropdown.Item>
+                            <NavDropdown.Item href="/saddlery">Saddlery</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">Contact</NavDropdown.Item>
                         </NavDropdown>

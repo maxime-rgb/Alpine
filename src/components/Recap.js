@@ -1,45 +1,75 @@
 import React from 'react';
-
-// import ButtonCapacity from './ButtonCapacity';
-// import ProgressBar from './ProgressBar';
-// import { connect } from 'react-redux';
-// import Power from './Power';
-// import ManaReload from './ManaReload';
-
+import {connect} from "react-redux";
+import imgPure from './CarouPure';
+import imgLegend from './CarouLegend';
+import { Carousel } from 'react-bootstrap';
+import RecapAll from './TabRecap';
 
 
 
-// const mapStateToProps = (state, ownProps) => {
-//     return { 
-//         players: state.players,
-//         props: ownProps
-//     };
-//   };
-
-// const PlayerCardConnect = ({players, props}) => {
-//     return (
-
-//             <div key={props.player.id} className="col-sm-3 card center" id={`joueur${props.player.id}`}>
-
-//                 <div className="card-body text-center">
-//                 <img className="imgPlayer" src={props.player.photo} />
-//                     <h5 className="card-title">{props.player.name}</h5>
-//                     <ProgressBar className="playerPv" pv={props.player.pv} pvMax={props.player.pvMax} faType='fa-heart' barName=' : pv ' bgType='bg-danger' />
-//                     <ProgressBar className="playerMana" pv={props.player.mana} pvMax={props.player.manaMax} faType='fa-fire-alt' barName=' : mana ' />
-
-//                     <span className="badge badge-danger ml-2 " id="degatSpanJ1"></span>
-//                     <div className="row ">
-//                         <div >
-//                             <ButtonCapacity player={props.player} />
-//                             <Power player={props.player} />
-//                             <ManaReload player={props.player} />
-//                         </div>
-//                     </div >
-//                 </div >
-//             </div >
-// )};
+const mapStateToProps = (state, ) => {
+    return { OptionSelected: state.OptionSelected
+    };
+};
 
 
-// const PlayerCard = connect(mapStateToProps)(PlayerCardConnect);
+const ImageChoiceConnect = ({OptionSelected}) => {
 
-export default Recap;
+let data
+    if (OptionSelected.name === 'A110 Pure') {
+        data =  imgPure
+    } else {
+        data =  imgLegend
+    }
+
+    if (OptionSelected.color.name === "Deep Black Metallic Tint" && OptionSelected.rims.name === "serac"){
+        data = data.color.black.rims.serac
+    }else if (OptionSelected.color.name === "Deep Black Metallic Tint" && OptionSelected.rims.name=== "standard"){
+        data = data.color.black.rims.standard
+    } 
+
+    else if (OptionSelected.color.name === "Alpine Blue Special Tint" && OptionSelected.rims.name === "serac"){
+        data = data.color.blue.rims.serac
+    }else if (OptionSelected.color.name === "Alpine Blue Special Tint" && OptionSelected.rims.name === "standard"){
+        data = data.color.blue.rims.standard
+
+    }else if (OptionSelected.color.name === "Opaque Glacier White paint" && OptionSelected.rims.name === "serac"){
+        data = data.color.white.rims.serac
+    } else if (OptionSelected.color.name === "Opaque Glacier White paint" && OptionSelected.rims.name === "standard"){
+        data = data.color.white.rims.standard
+    }
+    else if (OptionSelected.color.name === "Alpine Blue Special Tint" && OptionSelected.rims.name === "Legende"){
+        data = data.color.blue
+    }else if (OptionSelected.color.name === "Deep Black Metallic Tint" && OptionSelected.rims.name === "Legende"){
+        data = data.color.black
+    } else  {
+        data = data.color.white
+    }
+
+
+
+
+    return (
+        <section>
+            <Carousel>
+                {Object.keys(data).map((index)=>{
+                return(
+                        <Carousel.Item className="firstImg">
+                            <img
+                                className="d-block w-100"
+                                src={data[index]}
+                                alt="First slide"
+                            />
+                        </Carousel.Item>
+                        )
+                })}
+            </Carousel>
+            <RecapAll />
+        </section>
+    )
+}
+
+
+const Recap = connect( mapStateToProps)(ImageChoiceConnect);
+
+export default Recap

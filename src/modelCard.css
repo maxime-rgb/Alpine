@@ -1,13 +1,15 @@
-.card{
-    overflow: hidden;
-}
-
 .card-container{
     height: 90vh;
     display: flex;
     justify-content: space-around;
-    align-items: center; 
+    align-items: center;
     text-align: center;
+}
+
+.card-title{
+    text-align: center;
+    margin: 1vw;
+    color: #fff;
 }
 
 .card-container img{ 
@@ -18,8 +20,16 @@
     transform: scale(1.1);
 }
 
-.card-title{
+.text-home {
     text-align: center;
-    margin: 1vw;
+    color: white;
 }
 
+.card{
+    overflow: hidden;
+}
+
+.card-body {
+    background-color: #051C2C;
+    color: #fff;
+}
