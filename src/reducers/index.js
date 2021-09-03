@@ -1,4 +1,3 @@
-import { List } from "semantic-ui-react";
 
 const initialState = {
 
